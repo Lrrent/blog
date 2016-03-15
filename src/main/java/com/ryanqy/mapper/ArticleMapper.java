@@ -1,6 +1,8 @@
 package com.ryanqy.mapper;
 
 import com.ryanqy.entity.ArticleEntity;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,14 +12,8 @@ import org.springframework.stereotype.Component;
  *
  * @author wutong
  */
-@Component
-public class ArticleMapper {
+public interface ArticleMapper {
 
-    @Autowired
-    private SqlSessionTemplate sqlSessionTemplate;
-
-    public ArticleEntity findArticleById(long articleId) {
-        return this.sqlSessionTemplate.selectOne("findArticleById", articleId);
-    }
-
+    @Select("select * from t_article where articleId = #{articleId}")
+    ArticleEntity findArticleById(@Param("articleId") long articleId);
 }
