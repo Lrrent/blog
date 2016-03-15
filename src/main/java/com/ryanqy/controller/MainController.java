@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author wutong
  */
 @Controller
-@RequestMapping("/article")
-public class ArticleController {
+@RequestMapping("/")
+public class MainController {
 
-    @RequestMapping("/main")
+    @RequestMapping("/")
     public String main() {
-        return "main";
+        return "index";
     }
 
 }
