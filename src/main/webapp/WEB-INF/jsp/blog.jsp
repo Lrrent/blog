@@ -10,7 +10,7 @@
   ================================================== -->
 	<meta charset="utf-8">
 	<title>zSoodany</title>
-	<meta name="description" content="Free Responsive Html5 Css3 Templates Designed by Kimmy | zSoodany">
+	<meta name="description" content="Free Responsive Html5 Css3 Templates Designed by Kimmy">
 	<meta name="author" content="zSoodany">
 	
     <!-- Mobile Specific Metas
@@ -56,7 +56,7 @@
 			</div>
 			<div id="search">
 				<div class="button-search"></div>
-				<input type="text" value="Search..." onFocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onBlur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+				<input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
 			</div>
 		</div>
 		
@@ -81,7 +81,7 @@
 		
 	</div>
 </header>
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+
 <!--------------Content--------------->
 <section id="content">
 	<div class="wrap-content">
@@ -93,38 +93,31 @@
 							<h2><a href="#">Sed accumsan libero quis mi commodo et suscipit</a></h2>
 						</div>
 						<div class="content">
-							<img src="images/img1.jpg" width="250px" height="100px"/>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum [...]</p>
-		
+							<img src="images/img1.jpg" width="100%"/>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
 						</div>
 						<div class="info">
 							<p>By Admin on December 01, 2012 - <a href="#">01 Commnets</a></p>
 						</div>
 					</article>
-					<article>
-						<div class="heading">
-							<h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-						</div>
-						<div class="content">
-							<img src="images/img2.jpg" width="250px" height="100px"/>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum [...]</p>
-						</div>
-						<div class="info">
-							<p>By Admin on December 01, 2012 - <a href="#">01 Commnets</a></p>
-						</div>
-					</article>
-					<article>
-						<div class="heading">
-							<h2><a href="#">Morbi rutrum vulputate est sed faucibus</a></h2>
-						</div>
-						<div class="content">
-							<img src="images/img3.jpg" width="250px" height="100px"/>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum [...]</p>
-						</div>
-						<div class="info">
-							<p>By Admin on December 01, 2012 - <a href="#">01 Commnets</a></p>
-						</div>
-					</article>
+					
+					<section>
+						<h3>Leave a Comment</h3>
+						
+						<form id="contact-form" method="post">
+						    <fieldset>
+						        <label><input name="email" value="Email" onBlur="if(this.value=='') this.value='Email'" onFocus="if(this.value =='Email' ) this.value=''" /></label>
+						        <label><input name="subject" value="Subject" onBlur="if(this.value=='') this.value='Subject'" onFocus="if(this.value =='Subject' ) this.value=''" /></label>
+						        <textarea onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
+						        <div class="buttons">
+						            <a href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
+						            <a href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
+						        </div>											
+						    </fieldset>           
+						</form>
+					</section>
 				</div>
 			</div>
 			<div id="sidebar" class="col-1-3">
@@ -210,7 +203,7 @@
 						<div class="heading"><h2>Contact Us</h2></div>
 						<div class="content">
 							<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</p>
-							<p>Website : <a href="#" target="_blank">www.dglives.com</a></p>
+							<p>Website : <a href="#" target="_blank">www.zerotheme.com</a></p>
 							<p>+1 (123) 444-5677 <br/> +1 (123) 444-5678</p>
 							<p>Address: 123 TemplateAccess Rd1</p>
 						</div>

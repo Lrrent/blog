@@ -31,6 +31,7 @@ public class Application extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("images/**").addResourceLocations("/WEB-INF/jsp/images/");
         registry.addResourceHandler("css/**").addResourceLocations("/WEB-INF/jsp/css/");
         registry.addResourceHandler("js/**").addResourceLocations("/WEB-INF/jsp/js/");
+        registry.addResourceHandler("font/**").addResourceLocations("/WEB-INF/jsp/font/");
     }
 
     @Override
