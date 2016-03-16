@@ -28,7 +28,9 @@ public class Application extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("images/**").addResourceLocations("/jsp/images/");
+        registry.addResourceHandler("images/**").addResourceLocations("/WEB-INF/jsp/images/");
+        registry.addResourceHandler("css/**").addResourceLocations("/WEB-INF/jsp/css/");
+        registry.addResourceHandler("js/**").addResourceLocations("/WEB-INF/jsp/js/");
     }
 
     @Override
