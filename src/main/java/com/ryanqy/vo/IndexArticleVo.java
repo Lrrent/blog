@@ -2,13 +2,15 @@ package com.ryanqy.vo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * Created by Intellj Idea on 3/25/16.
  *
  * @author wutong
  */
 @Data
-public class IndexArticleVo {
+public class IndexArticleVo implements Serializable{
 
     /**
      * 文章id

@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         </article>
-                        <c:forEach items="articles" var="article">
+                        <c:forEach items="${articles}" var="article">
                             <article>
                                 <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
                                     <h5><a href="blog_detail.html">${article.title}</a></h5>

@@ -30,7 +30,6 @@ public class ArticleService {
 
     public Map<Long, ArticleDto> findArticleByIds(ArticleQueryDto articleQueryDto) {
         Preconditions.checkNotNull(articleQueryDto, "argument articleQueryDto can't be null!");
-        Preconditions.checkArgument(!CollectionUtils.isEmpty(articleQueryDto.getArticleIds()), "articleIds can' be null!");
 
         List<ArticleEntity> articleEntities = articleMapper.findArticleByIds(articleQueryDto);
         if (CollectionUtils.isEmpty(articleEntities)) {

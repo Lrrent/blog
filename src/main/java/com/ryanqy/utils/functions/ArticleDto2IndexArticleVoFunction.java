@@ -3,6 +3,7 @@ package com.ryanqy.utils.functions;
 import com.google.common.base.Function;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.vo.IndexArticleVo;
+import org.joda.time.DateTime;
 import org.springframework.cglib.beans.BeanCopier;
 
 /**
@@ -27,7 +28,7 @@ public class ArticleDto2IndexArticleVoFunction implements Function<ArticleDto, I
         }
         IndexArticleVo indexArticleVo = new IndexArticleVo();
         COPIER.copy(articleDto, indexArticleVo, null);
-//        Instant instant = articleDto.getCreateTime().toInstant();
+        indexArticleVo.setCreateTime(new DateTime(articleDto.getCreateTime()).toString("yyyy-MM-dd"));
         return indexArticleVo;
     }
 }
