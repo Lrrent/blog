@@ -7,12 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Intellj Idea on 3/15/16.
@@ -21,14 +16,14 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class ArticleUpdateServiceTest {
+public class ArticleServiceTest {
 
     @Autowired
-    private ArticleUpdateService articleUpdateService;
+    private ArticleService articleService;
 
     @Test
     public void testFindArticleById() throws Exception {
-        ArticleDto articleDto = articleUpdateService.findArticleById(1);
+        ArticleDto articleDto = articleService.findArticleById(1);
         Assert.assertNotNull(articleDto);
         Assert.assertNotNull(articleDto.getContent());
         Assert.assertTrue("SAN FRANCISCO".equals(articleDto.getContent()));

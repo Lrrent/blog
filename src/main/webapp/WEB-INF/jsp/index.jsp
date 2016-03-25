@@ -1,4 +1,5 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -115,6 +116,17 @@
                                 </div>
                             </div>
                         </article>
+                        <c:forEach items="articles" var="article">
+                            <article>
+                                <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
+                                    <h5><a href="blog_detail.html">${article.title}</a></h5>
+                                    <p>${article.pemmican}[...]</p>
+                                    <div style="font-size:14px;">
+                                        ${article.createTime}-<a href="#">${article.author}</a> <a class="a2" href="blog_detail.html">阅读全文</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </c:forEach>
                     </div>
 
                     <!--分页-->

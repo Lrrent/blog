@@ -1,10 +1,9 @@
 package com.ryanqy.utils.functions;
 
+import com.google.common.base.Function;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.entity.ArticleEntity;
 import org.springframework.cglib.beans.BeanCopier;
-
-import java.util.function.Function;
 
 /**
  * Created by Intellj Idea on 3/15/16.

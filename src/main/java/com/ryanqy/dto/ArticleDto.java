@@ -24,6 +24,21 @@ public class ArticleDto implements Serializable {
     private String content;
 
     /**
+     * 标题
+     */
+    private String title;
+
+    /**
+     * 作者
+     */
+    private String author = "ryanqy";
+
+    /**
+     * 摘要
+     */
+    private String pemmican;
+
+    /**
      * 创建时间
      */
     private Date createTime;

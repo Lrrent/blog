@@ -1,11 +1,17 @@
 package com.ryanqy.mapper;
 
+import com.ryanqy.dto.ArticleQueryDto;
 import com.ryanqy.entity.ArticleEntity;
+import com.ryanqy.mapper.provider.ArticleProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Intellj Idea on 3/15/16.
@@ -14,6 +20,7 @@ import org.springframework.stereotype.Component;
  */
 public interface ArticleMapper {
 
-    @Select("select * from t_article where articleId = #{articleId}")
-    ArticleEntity findArticleById(@Param("articleId") long articleId);
+    @SelectProvider(method = "findArticleByIds", type = ArticleProvider.class)
+    List<ArticleEntity> findArticleByIds(@Param("articleQueryDto") ArticleQueryDto articleQueryDto);
+
 }
