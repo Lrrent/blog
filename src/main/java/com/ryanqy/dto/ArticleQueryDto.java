@@ -1,7 +1,9 @@
 package com.ryanqy.dto;
 
 import com.google.common.collect.Sets;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Builder;
 
 import java.util.Set;
@@ -13,6 +15,8 @@ import java.util.Set;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ArticleQueryDto {
 
     /**
