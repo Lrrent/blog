@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -59,7 +61,7 @@
             <ul>
               <li><a href="index.jsp">首页</a></li>
               <!-- <li><a href="blog_list.html">文章列表</a></li>-->
-              <li><a href="news_list.html">资讯</a></li>
+              <li><a href="news.jsp">资讯</a></li>
               <li><a href="web.html">Web</a></li>
               <li><a href="architecture.html">架构</a></li>
               <li><a href="technology.html">基础技术</a></li>

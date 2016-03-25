@@ -10,8 +10,8 @@
             <div class="heading">
                 <h2>个人信息</h2>
             </div>
-            <div class="content"><a href="#" target="_blank"><img src="images/zerotheme.png"
-                                                                  style="border: 0px;"/></a>
+            <div class="content">
+                <a href="#" target="_blank"><img src="images/zerotheme.png" style="border: 0px;"/></a>
                 <p>Free Html5 Templates created by <a href="#">Zerotheme</a>. 个人信息个人信息the template for
                     both personal and commercial use. You must keep all copyright information and credit
                     links in the template and associated files.</p>

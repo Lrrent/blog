@@ -14,9 +14,8 @@
             <div class="wrap-nav">
                 <div class="menu">
                     <ul>
-                        <li><a href="index.jsp">首页</a></li>
-                        <!-- <li><a href="blog_list.html">文章列表</a></li>-->
-                        <li><a href="news_list.html">资讯</a></li>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news">资讯</a></li>
                         <li><a href="web.html">Web</a></li>
                         <li><a href="architecture.html">架构</a></li>
                         <li><a href="technology.html">基础技术</a></li>

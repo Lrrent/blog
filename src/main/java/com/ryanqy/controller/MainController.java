@@ -3,6 +3,7 @@ package com.ryanqy.controller;
 import com.google.common.collect.Lists;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.dto.ArticleQueryDto;
+import com.ryanqy.dto.ArticleType;
 import com.ryanqy.service.ArticleService;
 import com.ryanqy.utils.functions.ArticleDto2IndexArticleVoFunction;
 import com.ryanqy.vo.SimpleArticleVo;
@@ -30,6 +31,30 @@ public class MainController {
 
     @RequestMapping("/")
     public ModelAndView main(ArticleQueryDto articleQueryDto) {
+        initArticleQueryDto(articleQueryDto);
+        ModelAndView modelAndView = findArticleListByArticleQueryDto(articleQueryDto);
+        modelAndView.setViewName("index");
+        return modelAndView;
+    }
+
+    @RequestMapping("/news")
+    public ModelAndView news(ArticleQueryDto articleQueryDto) {
+        initArticleQueryDto(articleQueryDto);
+        articleQueryDto.setArticleType(ArticleType.NEWS);
+        ModelAndView modelAndView = findArticleListByArticleQueryDto(articleQueryDto);
+        modelAndView.setViewName("news");
+        return modelAndView;
+    }
+
+    private ModelAndView findArticleListByArticleQueryDto(ArticleQueryDto articleQueryDto) {
+        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticleByIds(articleQueryDto);
+        List<SimpleArticleVo> simpleArticleVoList = Lists.transform(Lists.newArrayList(longArticleDtoMap.values()), ArticleDto2IndexArticleVoFunction.INSTANCE);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("articles", simpleArticleVoList);
+        return modelAndView;
+    }
+
+    private void initArticleQueryDto(ArticleQueryDto articleQueryDto) {
         if (!articleQueryDto.isReverseOrderByCreateTime()) {
             articleQueryDto.setReverseOrderByCreateTime(true);
         }
@@ -39,12 +64,6 @@ public class MainController {
         if (articleQueryDto.getPageIndex() == -1) {
             articleQueryDto.setPageIndex(0);
         }
-        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticleByIds(articleQueryDto);
-        List<SimpleArticleVo> simpleArticleVoList = Lists.transform(Lists.newArrayList(longArticleDtoMap.values()), ArticleDto2IndexArticleVoFunction.INSTANCE);
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("articles", simpleArticleVoList);
-        modelAndView.setViewName("index");
-        return modelAndView;
     }
 
     @ResponseBody

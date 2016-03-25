@@ -28,7 +28,7 @@ public class ArticleQueryDto {
      * 文章类型
      * @see ArticleType
      */
-    private ArticleType articleType;
+    private int articleType;
 
     /**
      * 分页大小
