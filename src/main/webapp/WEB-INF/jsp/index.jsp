@@ -89,33 +89,6 @@
                             </ul>
                         </div>
                         <div style="height:20px; clear:both;"></div>
-                        <article>
-                            <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
-                                <h5><a href="blog_detail.html">开始掌管位于加州硅谷的大众北美设</a></h5>
-                                <p>1989年，J Mays开始掌管位于加州硅谷的大众北美设计中心，在这里，他主导设计的1994款VW Concept One概念车催生了堪称复古经甲壳虫，无聊代名词[...]</p>
-                                <div style="font-size:14px;">
-                                    2016-3-19-<a href="#">wutong</a> <a class="a2" href="blog_detail.html">阅读全文</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
-                                <h5><a href="blog_detail.html">开始掌管位于加州硅谷的大众北美设</a></h5>
-                                <p>1989年，J Mays开始掌管位于加州硅谷的大众北美设计中心，在这里，他主导设计的1994款VW Concept One概念车催生了堪称复古经甲壳虫，无聊代名词[...]</p>
-                                <div style="font-size:14px;">
-                                    2016-3-19-<a href="#">wutong</a> <a class="a2" href="blog_detail.html">阅读全文</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
-                                <h5><a href="blog_detail.html">开始掌管位于加州硅谷的大众北美设</a></h5>
-                                <p>1989年，J Mays开始掌管位于加州硅谷的大众北美设计中心，在这里，他主导设计的1994款VW Concept One概念车催生了堪称复古经甲壳虫，无聊代名词[...]</p>
-                                <div style="font-size:14px;">
-                                    2016-3-19-<a href="#">wutong</a> <a class="a2" href="blog_detail.html">阅读全文</a>
-                                </div>
-                            </div>
-                        </article>
                         <c:forEach items="${articles}" var="article">
                             <article>
                                 <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>

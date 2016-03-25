@@ -11,7 +11,7 @@ import java.util.Date;
  * @author wutong
  */
 @Data
-public class ArticleDto implements Serializable {
+public class ArticleDto {
 
     /**
      * 文章id

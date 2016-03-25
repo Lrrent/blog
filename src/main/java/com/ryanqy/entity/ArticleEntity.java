@@ -12,7 +12,7 @@ import java.util.Date;
  * @author wutong
  */
 @Data
-public class ArticleEntity implements Serializable {
+public class ArticleEntity {
 
     /**
      * 文章id
