@@ -46,9 +46,7 @@
     <!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"
-                 height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
         </a>
     </div>
     <![endif]-->
@@ -101,14 +99,14 @@
                             </article>
                         </c:forEach>
                     </div>
-
-                    <!--分页-->
-                    <div style="clear:both; height:10px;"></div>
-                    <div style=" " id="pagerArea" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;"></div>
-                    </br>
-                    <div id="console"></div>
-                    <!--分页-->
-
+                    <c:if test="${totalSize > pageSize}">
+                        <!--分页-->
+                        <div style="clear:both; height:10px;"></div>
+                        <div id="pagerArea" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;"></div>
+                        <br/>
+                        <div id="console"></div>
+                        <!--分页-->
+                    </c:if>
                 </div>
                 <%@include file="sideBar.jsp" %>
             </div>
@@ -125,8 +123,10 @@
 <!--
 $(function () {
     $("#pagerArea").cypager({
-        pg_size: 10, pg_nav_count: 8, pg_total_count: 194, pg_call_fun: function (count) {
+        pg_size: ${pageSize}, pg_prev_name:'上一页',pg_next_name:'下一页', pg_total_count: ${totalSize}, pg_call_fun: function (count) {
             $("#console").html("正在加载第(" + count + ")页的数据，请稍后.......");
+            var url = "/?pageIndex=count&pageSize=${pageSize}";
+            $.get(url);
         }
     });
 });

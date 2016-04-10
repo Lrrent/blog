@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.dto.ArticleQueryDto;
+import com.ryanqy.dto.ArticleQueryResultDto;
 import com.ryanqy.dto.ArticleType;
 import com.ryanqy.service.ArticleService;
 import com.ryanqy.utils.functions.ArticleDto2ArticleVoFunction;
@@ -32,7 +33,8 @@ public class MainController {
     @RequestMapping("/")
     public ModelAndView main(ArticleQueryDto articleQueryDto) {
         initArticleQueryDtoPageSettings(articleQueryDto);
-        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticles(articleQueryDto);
+        ArticleQueryResultDto articleQueryResultDto = articleService.findArticles(articleQueryDto);
+        Map<Long, ArticleDto> longArticleDtoMap = articleQueryResultDto.getArticleDtoMap();
         List<ArticleVo> simpleArticleVoList = Lists.transform(Lists.newArrayList(longArticleDtoMap.values()), ArticleDto2ArticleVoFunction.INSTANCE);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("articles", simpleArticleVoList);
@@ -49,6 +51,8 @@ public class MainController {
         } else if (articleQueryDto.getArticleType() == 5) {
             modelAndView.setViewName("book");
         }
+        modelAndView.addObject("totalSize", articleQueryResultDto.getTotalSize());
+        modelAndView.addObject("pageSize", articleQueryResultDto.getArticleQueryDto().getPageSize());
         return modelAndView;
     }
 
@@ -62,7 +66,8 @@ public class MainController {
     public ModelAndView findArticleById(long articleId) {
         ArticleQueryDto articleQueryDto = new ArticleQueryDto();
         articleQueryDto.setArticleIds(Sets.newHashSet(articleId));
-        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticles(articleQueryDto);
+        ArticleQueryResultDto articleQueryResultDto = articleService.findArticles(articleQueryDto);
+        Map<Long, ArticleDto> longArticleDtoMap = articleQueryResultDto.getArticleDtoMap();
         if (CollectionUtils.isEmpty(longArticleDtoMap) || longArticleDtoMap.entrySet().size() != 1) {
             return null;
         }

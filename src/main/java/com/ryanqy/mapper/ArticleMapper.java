@@ -23,4 +23,7 @@ public interface ArticleMapper {
     @SelectProvider(method = "findArticles", type = ArticleProvider.class)
     List<ArticleEntity> findArticles(@Param("articleQueryDto") ArticleQueryDto articleQueryDto);
 
+    @SelectProvider(method = "findArticlesCount", type = ArticleProvider.class)
+    int findArticlesCount(@Param("articleQueryDto") ArticleQueryDto articleQueryDto);
+
 }

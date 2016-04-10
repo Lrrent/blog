@@ -34,4 +34,18 @@ public class ArticleProvider {
         return sql.toString();
     }
 
+    public String findArticlesCount(Map<String, Object> parameters) {
+        ArticleQueryDto articleQueryDto = (ArticleQueryDto) parameters.get("articleQueryDto");
+        SQL sql = new SQL();
+        sql.SELECT("count(*)");
+        sql.FROM("t_article");
+        if (!CollectionUtils.isEmpty(articleQueryDto.getArticleIds())) {
+            sql.WHERE("articleId in (" + Joiner.on(",").skipNulls().join(articleQueryDto.getArticleIds()) + ")");
+        }
+        if (articleQueryDto.getArticleType() != null) {
+            sql.WHERE("articleType = " + articleQueryDto.getArticleType());
+        }
+        return sql.toString();
+    }
+
 }

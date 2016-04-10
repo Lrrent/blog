@@ -6,6 +6,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.dto.ArticleQueryDto;
+import com.ryanqy.dto.ArticleQueryResultDto;
 import com.ryanqy.entity.ArticleEntity;
 import com.ryanqy.mapper.ArticleMapper;
 import com.ryanqy.utils.functions.ArticleEntity2DtoFunction;
@@ -28,12 +29,13 @@ public class ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
-    public Map<Long, ArticleDto> findArticles(ArticleQueryDto articleQueryDto) {
+    public ArticleQueryResultDto findArticles(ArticleQueryDto articleQueryDto) {
         Preconditions.checkNotNull(articleQueryDto, "argument articleQueryDto can't be null!");
-
+        ArticleQueryResultDto articleQueryResultDto = new ArticleQueryResultDto();
+        articleQueryResultDto.setArticleQueryDto(articleQueryDto);
         List<ArticleEntity> articleEntities = articleMapper.findArticles(articleQueryDto);
         if (CollectionUtils.isEmpty(articleEntities)) {
-            return Maps.newHashMap();
+            return articleQueryResultDto;
         }
         List<ArticleDto> articleDtoList = Lists.transform(articleEntities, ArticleEntity2DtoFunction.INSTANCE);
         Map<Long, ArticleDto> result = Maps.newHashMap();
@@ -41,7 +43,12 @@ public class ArticleService {
             result.put(articleDto.getArticleId(), articleDto);
         }
 
-        return result;
+        articleQueryResultDto.setArticleDtoMap(result);
+
+        int totalSize = articleMapper.findArticlesCount(articleQueryDto);
+        articleQueryResultDto.setTotalSize(totalSize);
+
+        return articleQueryResultDto;
     }
 
 }
