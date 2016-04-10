@@ -26,23 +26,24 @@ public class ArticleQueryDto {
 
     /**
      * 文章类型
+     *
      * @see ArticleType
      */
-    private int articleType;
+    private Integer articleType;
 
     /**
      * 分页大小
      */
-    private int pageSize;
+    private Integer pageSize;
 
     /**
      * 分页索引
      */
-    private int pageIndex = -1;
+    private Integer pageIndex;
 
     /**
      * 是否按照创建时间逆序
      */
-    private boolean reverseOrderByCreateTime = false;
+    private Boolean reverseOrderByCreateTime;
 
 }

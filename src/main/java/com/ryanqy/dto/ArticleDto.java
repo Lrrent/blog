@@ -1,6 +1,8 @@
 package com.ryanqy.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,6 +13,8 @@ import java.util.Date;
  * @author wutong
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ArticleDto {
 
     /**
@@ -24,6 +28,11 @@ public class ArticleDto {
     private String content;
 
     /**
+     * 文章类型
+     */
+    private int articleType;
+
+    /**
      * 标题
      */
     private String title;
@@ -31,12 +40,12 @@ public class ArticleDto {
     /**
      * 作者
      */
-    private String author = "ryanqy";
+    private String author = "Ryanqy";
 
     /**
      * 摘要
      */
-    private String pemmican;
+    private String summary;
 
     /**
      * 创建时间

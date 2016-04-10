@@ -15,11 +15,11 @@
                 <div class="menu">
                     <ul>
                         <li><a href="/">首页</a></li>
-                        <li><a href="/news">资讯</a></li>
-                        <li><a href="web.html">Web</a></li>
-                        <li><a href="architecture.html">架构</a></li>
-                        <li><a href="technology.html">基础技术</a></li>
-                        <li><a href="book.html">书籍</a></li>
+                        <li><a href="/?articleType=1">资讯</a></li>
+                        <li><a href="?articleType=2">Web</a></li>
+                        <li><a href="?articleType=3">架构</a></li>
+                        <li><a href="?articleType=4">基础技术</a></li>
+                        <li><a href="?articleType=5">书籍</a></li>
                     </ul>
                     <div id="search">
                         <div class="button-search"></div>

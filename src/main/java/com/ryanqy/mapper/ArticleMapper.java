@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public interface ArticleMapper {
 
-    @SelectProvider(method = "findArticleByIds", type = ArticleProvider.class)
-    List<ArticleEntity> findArticleByIds(@Param("articleQueryDto") ArticleQueryDto articleQueryDto);
+    @SelectProvider(method = "findArticles", type = ArticleProvider.class)
+    List<ArticleEntity> findArticles(@Param("articleQueryDto") ArticleQueryDto articleQueryDto);
 
 }

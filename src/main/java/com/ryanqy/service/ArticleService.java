@@ -28,10 +28,10 @@ public class ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
-    public Map<Long, ArticleDto> findArticleByIds(ArticleQueryDto articleQueryDto) {
+    public Map<Long, ArticleDto> findArticles(ArticleQueryDto articleQueryDto) {
         Preconditions.checkNotNull(articleQueryDto, "argument articleQueryDto can't be null!");
 
-        List<ArticleEntity> articleEntities = articleMapper.findArticleByIds(articleQueryDto);
+        List<ArticleEntity> articleEntities = articleMapper.findArticles(articleQueryDto);
         if (CollectionUtils.isEmpty(articleEntities)) {
             return Maps.newHashMap();
         }

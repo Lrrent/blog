@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class ArticleProvider {
 
-    public String findArticleByIds(Map<String, Object> parameters) {
+    public String findArticles(Map<String, Object> parameters) {
         ArticleQueryDto articleQueryDto = (ArticleQueryDto) parameters.get("articleQueryDto");
         SQL sql = new SQL();
         sql.SELECT("*");
@@ -22,10 +22,16 @@ public class ArticleProvider {
         if (!CollectionUtils.isEmpty(articleQueryDto.getArticleIds())) {
             sql.WHERE("articleId in (" + Joiner.on(",").skipNulls().join(articleQueryDto.getArticleIds()) + ")");
         }
-        if (articleQueryDto.isReverseOrderByCreateTime()) {
+        if (articleQueryDto.getArticleType() != null) {
+            sql.WHERE("articleType = " + articleQueryDto.getArticleType());
+        }
+        if (articleQueryDto.getReverseOrderByCreateTime() != null && articleQueryDto.getReverseOrderByCreateTime()) {
             sql.ORDER_BY("createTime asc");
         }
-        return sql.toString() + " limit " + articleQueryDto.getPageIndex() + " , " + articleQueryDto.getPageSize();
+        if (articleQueryDto.getPageIndex() != null && articleQueryDto.getPageSize() != null) {
+            return sql.toString() + " limit " + articleQueryDto.getPageIndex() + " , " + articleQueryDto.getPageSize();
+        }
+        return sql.toString();
     }
 
 }

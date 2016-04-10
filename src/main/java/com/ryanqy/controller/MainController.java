@@ -1,17 +1,17 @@
 package com.ryanqy.controller;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.ryanqy.dto.ArticleDto;
 import com.ryanqy.dto.ArticleQueryDto;
 import com.ryanqy.dto.ArticleType;
 import com.ryanqy.service.ArticleService;
-import com.ryanqy.utils.functions.ArticleDto2IndexArticleVoFunction;
-import com.ryanqy.vo.SimpleArticleVo;
+import com.ryanqy.utils.functions.ArticleDto2ArticleVoFunction;
+import com.ryanqy.vo.ArticleVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -31,46 +31,46 @@ public class MainController {
 
     @RequestMapping("/")
     public ModelAndView main(ArticleQueryDto articleQueryDto) {
-        initArticleQueryDto(articleQueryDto);
-        ModelAndView modelAndView = findArticleListByArticleQueryDto(articleQueryDto);
-        modelAndView.setViewName("index");
-        return modelAndView;
-    }
-
-    @RequestMapping("/news")
-    public ModelAndView news(ArticleQueryDto articleQueryDto) {
-        initArticleQueryDto(articleQueryDto);
-        articleQueryDto.setArticleType(ArticleType.NEWS);
-        ModelAndView modelAndView = findArticleListByArticleQueryDto(articleQueryDto);
-        modelAndView.setViewName("news");
-        return modelAndView;
-    }
-
-    private ModelAndView findArticleListByArticleQueryDto(ArticleQueryDto articleQueryDto) {
-        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticleByIds(articleQueryDto);
-        List<SimpleArticleVo> simpleArticleVoList = Lists.transform(Lists.newArrayList(longArticleDtoMap.values()), ArticleDto2IndexArticleVoFunction.INSTANCE);
+        initArticleQueryDtoPageSettings(articleQueryDto);
+        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticles(articleQueryDto);
+        List<ArticleVo> simpleArticleVoList = Lists.transform(Lists.newArrayList(longArticleDtoMap.values()), ArticleDto2ArticleVoFunction.INSTANCE);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("articles", simpleArticleVoList);
+        if (articleQueryDto.getArticleType() == null) {
+            modelAndView.setViewName("index");
+        } else if (articleQueryDto.getArticleType() == ArticleType.NEWS) {
+            modelAndView.setViewName("news");
+        } else if (articleQueryDto.getArticleType() == ArticleType.WEB) {
+            modelAndView.setViewName("web");
+        } else if (articleQueryDto.getArticleType() == ArticleType.ARCHITECTURE) {
+            modelAndView.setViewName("architecture");
+        } else if (articleQueryDto.getArticleType() == ArticleType.TECHNOLOGY) {
+            modelAndView.setViewName("technology");
+        } else if (articleQueryDto.getArticleType() == 5) {
+            modelAndView.setViewName("book");
+        }
         return modelAndView;
     }
 
-    private void initArticleQueryDto(ArticleQueryDto articleQueryDto) {
-        if (!articleQueryDto.isReverseOrderByCreateTime()) {
-            articleQueryDto.setReverseOrderByCreateTime(true);
-        }
-        if (articleQueryDto.getPageSize() == 0) {
-            articleQueryDto.setPageSize(4);
-        }
-        if (articleQueryDto.getPageIndex() == -1) {
-            articleQueryDto.setPageIndex(0);
-        }
+    private void initArticleQueryDtoPageSettings(ArticleQueryDto articleQueryDto) {
+        articleQueryDto.setReverseOrderByCreateTime(true);
+        articleQueryDto.setPageSize(4);
+        articleQueryDto.setPageIndex(0);
     }
 
-    @ResponseBody
-    @RequestMapping("/findArticles")
-    public List<SimpleArticleVo> findArticles(@RequestBody ArticleQueryDto articleQueryDto) {
-
-        return Lists.newArrayList();
+    @RequestMapping("/findArticleById")
+    public ModelAndView findArticleById(long articleId) {
+        ArticleQueryDto articleQueryDto = new ArticleQueryDto();
+        articleQueryDto.setArticleIds(Sets.newHashSet(articleId));
+        Map<Long, ArticleDto> longArticleDtoMap = articleService.findArticles(articleQueryDto);
+        if (CollectionUtils.isEmpty(longArticleDtoMap) || longArticleDtoMap.entrySet().size() != 1) {
+            return null;
+        }
+        ArticleVo articleVo = ArticleDto2ArticleVoFunction.INSTANCE.apply(longArticleDtoMap.get(articleId));
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("article", articleVo);
+        modelAndView.setViewName("articleDetail");
+        return modelAndView;
     }
 
 }
