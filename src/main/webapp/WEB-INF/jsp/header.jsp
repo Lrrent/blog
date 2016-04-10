@@ -7,8 +7,8 @@
 <header>
     <div class="wrap-header">
         <div id="logo">
-            <a href="#"><h1>疯狂的程序员</h1></a>
-            <p>一个看似正经的程序员博客网站</p>
+            <a href="/"><h1>疯狂的程序员</h1></a>
+            <p>一个看似正经的程序猿博客网站</p>
         </div>
         <nav>
             <div class="wrap-nav">
