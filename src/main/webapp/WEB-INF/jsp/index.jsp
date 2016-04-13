@@ -20,17 +20,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/zerogrid.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/cypager.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/zerogrid.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/responsive.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cypager.min.css"/>
     <!-- CSS END -->
 
     <!-- 分页 -->
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.1.min.js"></script>
 
     <!-- 焦点图 img 619-392px -->
-    <script src="js/jquery.img_silder.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.img_silder.js"></script>
     <script>
         $(function () {
             $('#silder').imgSilder({
@@ -52,8 +52,8 @@
     <![endif]-->
 
     <!--[if lt IE 9]>
-    <script src="js/html5.js"></script>
-    <script src="js/css3-mediaqueries.js"></script>
+    <script src="${pageContext.request.contextPath}/js/html5.js"></script>
+    <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
     <![endif]-->
 
     <!--浏览器中显示的ICON-->
@@ -89,7 +89,7 @@
                         <div style="height:20px; clear:both;"></div>
                         <c:forEach items="${articles}" var="article">
                             <article>
-                                <div class="content"><img src="images/img1.jpg" width="120px" height="120px"/>
+                                <div class="content"><img src="${pageContext.request.contextPath}/images/img1.jpg" width="120px" height="120px"/>
                                     <h5><a href="articleDetail.jsp">${article.title}</a></h5>
                                     <p>${article.summary}[...]</p>
                                     <div style="font-size:14px;">
@@ -118,7 +118,7 @@
 </body>
 
 <!--分页插件-->
-<script type="text/javascript" src="js/cypager.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cypager.min.js"></script>
 <script>
 <!--
 $(function () {
