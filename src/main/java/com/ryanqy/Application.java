@@ -28,10 +28,12 @@ public class Application extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("images/**").addResourceLocations("/WEB-INF/jsp/images/");
-        registry.addResourceHandler("css/**").addResourceLocations("/WEB-INF/jsp/css/");
-        registry.addResourceHandler("js/**").addResourceLocations("/WEB-INF/jsp/js/");
+        registry.addResourceHandler("images/**").addResourceLocations("/WEB-INF/jsp/images/", "/WEB-INF/jsp/admin/images/");
+        registry.addResourceHandler("css/**").addResourceLocations("/WEB-INF/jsp/css/", "/WEB-INF/jsp/admin/css/");
+        registry.addResourceHandler("js/**").addResourceLocations("/WEB-INF/jsp/js/", "/WEB-INF/jsp/admin/js/");
         registry.addResourceHandler("font/**").addResourceLocations("/WEB-INF/jsp/font/");
+        registry.addResourceHandler("fonts/**").addResourceLocations("/WEB-INF/jsp/admin/fonts/");
+        registry.addResourceHandler("css/**").addResourceLocations("/WEB-INF/jsp/admin/css/");
     }
 
     @Override

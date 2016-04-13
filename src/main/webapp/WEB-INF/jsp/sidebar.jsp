@@ -11,7 +11,7 @@
                 <h2>个人信息</h2>
             </div>
             <div class="content">
-                <a href="#" target="_blank"><img src="images/zerotheme.png" style="border: 0px;"/></a>
+                <a href="#" target="_blank"><img src="${pageContext.request.contextPath}/images/zerotheme.png" style="border: 0px;"/></a>
                 <p>Free Html5 Templates created by <a href="#">Zerotheme</a>. 个人信息个人信息the template for
                     both personal and commercial use. You must keep all copyright information and credit
                     links in the template and associated files.</p>
@@ -36,15 +36,15 @@
                 <h2>热门文章</h2>
             </div>
             <div class="content">
-                <div class="post"><img src="images/img4.jpg" width="50px"/>
+                <div class="post"><img src="${pageContext.request.contextPath}/images/img4.jpg" width="50px"/>
                     <h4><a href="#">Lorem ipsum dolor sit</a></h4>
                     <p>November 11 ,2012</p>
                 </div>
-                <div class="post"><img src="images/img5.jpg" width="50px"/>
+                <div class="post"><img src="${pageContext.request.contextPath}/images/img5.jpg" width="50px"/>
                     <h4><a href="#">Lorem ipsum dolor sit</a></h4>
                     <p>November 11 ,2012</p>
                 </div>
-                <div class="post"><img src="images/img1.jpg" width="50px"/>
+                <div class="post"><img src="${pageContext.request.contextPath}/images/img1.jpg" width="50px"/>
                     <h4><a href="#">Lorem ipsum dolor sit</a></h4>
                     <p>November 11 ,2012</p>
                 </div>

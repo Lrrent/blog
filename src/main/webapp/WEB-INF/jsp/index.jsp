@@ -21,7 +21,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/zerogrid.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cypager.min.css"/>
     <!-- CSS END -->

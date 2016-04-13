@@ -33,7 +33,7 @@
 	s_height:500, //容器高度
 	is_showTit:true, // 是否显示图片标题 false :不显示，true :显示
 	s_times:3000, //设置滚动时间
-	css_link:'css/style.css'
+	css_link:'css/index.css'
   };
   $.extendSilder = function (obj,opt) { //obj 元素对象，opt 参数对象
     var g = {  //公共方法， 外部可调用
